@@ -8,4 +8,5 @@ function agregarEventos() {
   // Alumno: Al precionar el boton reload se debe llamar
   // a la función "reset"
 
+  reload.onclick = () => restart();
 }
