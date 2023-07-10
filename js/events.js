@@ -9,4 +9,5 @@ function agregarEventos() {
   // a la función "reset"
 
   reload.onclick = () => restart();
+  send.onclick = () => evaluar();
 }

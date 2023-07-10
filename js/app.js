@@ -20,8 +20,31 @@ let cantidadEncuestados = 0;  // Se utiliza para saber cuantos pokemons se inten
 function restart() {
     document.querySelector("#resultText").innerHTML = "";
     document.querySelector("#imgpokemon").classList.remove("success");
+    document.getElementById("input").value = "";
     numero = Math.floor(Math.random() * pokemons.length);
     document.querySelector("#imgpokemon").setAttribute("src", pokemons[numero].thumbnail)
+}
+
+function evaluar (){
+    let nombreIngresado = document.getElementById("input").value;
+
+    if (nombreIngresado === "") {
+        throw new Error("No se ingreso ningun nombre.");
+    }
+    else {
+        cantidadEncuestados++;
+        nombreIngresado.toLowerCase();
+        if (nombreIngresado === pokemons[numero].name.toLowerCase()){
+            document.getElementById("resultText").innerText = "Es correcto!";
+            cantidadAcertados++;
+            document.getElementById("imgpokemon").classList.add("success");
+        }
+        else {
+            document.getElementById("resultText").innerText = "Es incorrecto!";
+            document.getElementById("imgpokemon").classList.remove("success");
+        }
+        (cantidadAcertados>(cantidadEncuestados/2)) ? document.getElementById("puntaje").classList.remove("puntajeBajo"):document.getElementById("puntaje").classList.add("puntajeBajo");
+    }
 }
 
 
