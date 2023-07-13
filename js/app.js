@@ -3,7 +3,7 @@
 let numero = 0;  // Se utiliza para saber el nº de pokemon a adivinar
 let cantidadAcertados;  // Se utiliza para saber cuantos pokemons fueron adivinados
 let cantidadEncuestados; // Se utiliza para saber cuantas veces se encuesto al usuario
-let pokemon = new Pokemon ();
+// let pokemon = new Pokemon ();
 
 
 
@@ -18,7 +18,8 @@ function restart() {
     document.getElementById("input").value = "";
     let pokemons = JSON.parse(jsonData);
     numero = Math.floor(Math.random() * pokemons.length);
-    pokemon.constructor(pokemons[numero].id, pokemons[numero].name);
+    let pokemon = new Pokemon(pokemons[numero].id, pokemons[numero].name);
+    // pokemon.constructor(pokemons[numero].id, pokemons[numero].name);
     document.querySelector("#imgpokemon").setAttribute("src", pokemon.thumbnail);
 }
 
