@@ -28,6 +28,7 @@ function restart() {
     numero = Math.floor(Math.random() * pokemons.length);
     pokemon = new Pokemon(pokemons[numero].id, pokemons[numero].name);
     document.querySelector("#imgpokemon").setAttribute("src", pokemon.thumbnail);
+    document.getElementById("skills-description").style = "display: none;";
 }
 
 

@@ -26,6 +26,8 @@ function agregarEventos() {
             cantidadAcertados = sessionStorage.getItem('cantidadAcertados');
             cantidadAcertados++;
             sessionStorage.setItem('cantidadAcertados',cantidadAcertados);
+            buscarPokemon ();
+            document.getElementById("skills-description").style = "";
         }
         else {
             document.getElementById("resultText").innerText = "Es incorrecto!";
