@@ -29,7 +29,6 @@ function agregarEventos() {
         }
         else {
             document.getElementById("resultText").innerText = "Es incorrecto!";
-            document.getElementById("imgpokemon").classList.remove("success");
         }
         cargarPuntaje ();
     }
